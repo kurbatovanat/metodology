@@ -1,0 +1,24 @@
+@startuml⁶
+!theme amiga
+
+actor User as U
+participant Main_Activity as MA
+participant  GAME as G
+participant Answer as ANS
+participant User as DU
+participant Settings as S
+
+U -> MA
+MA -> G : Start
+G -> ANS : Answer
+ANS --> MA
+MA <-- G : End game without answer
+U <- G : sound, vibro
+
+MA -> DU
+DU -> MA
+MA -> S
+S --> MA
+U <- MA : info
+
+@enduml
