@@ -6,15 +6,12 @@ participant User_Int as UI
 participant  MAIN as MAIN
 database Figures as DBF
 database User as DBU
-collections Preferences as PREF
 
 U -> UI
 UI -> MAIN
 DBF -> MAIN
 MAIN -> DBU
 DBU -> MAIN
-PREF -> MAIN : settings
-MAIN -> PREF
 
 UI <- MAIN
 U <- UI : sound, vibro
