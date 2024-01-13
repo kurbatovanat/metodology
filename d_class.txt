@@ -1,0 +1,51 @@
+@startuml
+!theme amiga
+
+class Main
+{
+{field} +ActivityMain
+}
+
+class Game
+{
+{field} +resG
+{method} +loadFigure()
++startGame()
+}
+
+interface Figure
+{
++draw()
++contur()
+}
+
+class Circle
+{
+{field} -location
+{method} +draw()
++contur()
+}
+
+class Rectangle
+{
+{field} -location
+{method} +draw()
++contur()
+}
+
+class Settings
+{
+{method} +load()
++save()
++edit()
+}
+
+Figure <|.. Circle
+Figure <|.. Rectangle
+
+Game *-- Figure
+
+Main *-- Game
+Main *-- Settings
+
+@enduml
